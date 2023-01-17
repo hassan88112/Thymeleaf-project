@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Welcome To Gorilla Gym</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+
+    <div>
+        <td><a  href="" th:href="@{/api/v1/addCustomer}" class="btn btn-primary" >Add Customer</a></td>
+    </div>
+
+
+
+    <table class="table table-bordered table-striped" >
+        <thead  class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Price</th>
+            <th>Update</th>
+            <th>Delete</th>
+
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr th:each="temp : ${customers}">
+            <td th:text="${temp.id}" />
+            <td th:text="${temp.firstName}" />
+            <td th:text="${temp.lastName}" />
+            <td th:text="${temp.email}" />
+            <td th:text="${temp.price}" />
+
+
+            <td><a  href="" th:href="@{/api/v1/update/{id}(id=${temp.id})}" class="btn btn-warning">update</a></td>
+            <td><a  href="" th:href="@{/api/v1/delete/{id}(id=${temp.id})}" class="btn btn-danger">Delete</a></td>
+        </tr>
+
+
+
+        </tbody>
+
+    </table>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
