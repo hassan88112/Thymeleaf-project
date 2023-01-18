@@ -1,11 +1,13 @@
 package com.example.thymeleaf.Service;
 
 
+import com.example.thymeleaf.DTO.Customerdto;
 import com.example.thymeleaf.Entity.Customer;
 import com.example.thymeleaf.Repo.CustomerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,5 +32,9 @@ public class CustomerService {
 
     public void deleteCustomerById(Long id) {
         customerRepo.deleteById(id);
+    }
+    public List<Customer> getCustomerByDate(String statDate, String endDate){
+
+        return customerRepo.getCustomerByDate(statDate,endDate);
     }
 }

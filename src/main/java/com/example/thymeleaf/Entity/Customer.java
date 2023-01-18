@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -25,4 +27,11 @@ public class Customer {
     private String email;
 
     private Long price;
+
+    private LocalDate date;
+
+
+
+
+
 }

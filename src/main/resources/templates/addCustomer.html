@@ -21,6 +21,12 @@
     <input type="text"   required th:field="*{lastName}" class="form-control mb-4  col-4" placeholder="Last Name">
     <input type="text"   required th:field="*{email}" class="form-control mb-4  col-4" placeholder="Email">
     <input type="number" required th:field="*{price}" class="form-control mb-4  col-4" placeholder="Price">
+    <div>
+      <label>Start Date</label>
+      <input type="date" required th:field="*{date}" class="form-control mb-4  col-4" >
+    </div>
+
+
 
     <button  type="submit" class="btn btn-info col-2">Save</button>
 
